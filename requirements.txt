@@ -1,0 +1,7 @@
+langgraph>=1.0,<2
+pydantic>=2.7,<3
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+# нужен только для режима --llm live
+litellm>=1.50
