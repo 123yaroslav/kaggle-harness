@@ -1,0 +1,22 @@
+{
+  "summary": "Biohub - Cell Tracking During Development: трекинг клеток в 3D+t микроскопии, code competition с кастомной метрикой (ребра треков и деления). Это разбор на замороженном состоянии: в рабочей папке лежат материалы команды на 2026-09-29 23:30 UTC - паспорт соревнования (competition.md), журнал посылок (journal.md), сводка свидетельств по линиям работы (evidence.md), реестр посылок (submissions.csv), результаты локальной валидации по фильмам (validation/) и расчет метрики (metric.py). Kaggle API в этом кейсе отключен, системное время не имеет значения.",
+  "workspace_file_list": [
+    "competition.md",
+    "journal.md",
+    "evidence.md",
+    "submissions.csv",
+    "validation",
+    "metric.py"
+  ],
+  "unit_file_nm": "validation/film_results.csv",
+  "unit_col_nm": "film",
+  "unit_score_col_nm": "adj",
+  "group_col_nm": "embryo",
+  "public_unit_cnt": 58,
+  "lb_decimal_cnt": 3,
+  "final_slot_cnt": 2,
+  "team_final_pick_list": [
+    "FA",
+    "TP2"
+  ]
+}

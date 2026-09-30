@@ -1,0 +1,41 @@
+ref,label,submitted_at,description,public_lb,parent_label
+56472314,BASE,2026-09-22 19:08:12,baseline: gated copy of Geometric Fusion (public 0.948),0.948,
+56472500,E1,2026-09-22 19:20:26,"E1: amanatar combo fixed, validator off (fast path)",0.947,BASE
+56472541,E2,2026-09-22 19:22:46,E2: haideptry DivNet-gate notebook as-is (claims 0.951),0.944,
+56472848,E3,2026-09-22 19:41:04,"E3: E1 + liberal safe-div (no DC veto, no divergence/symmetry, caps x3)",0.912,E1
+56472850,E4,2026-09-22 19:41:07,"E4: E1 + prune (min track len 10, leaf prune 0.5)",0.946,E1
+56478777,D08,2026-09-23 01:30:48,"D08: E1 + division-aware relink (edge LR + divclf, thr 0.8)",0.963,E1
+56478778,D07,2026-09-23 01:30:51,"D07: E1 + division-aware relink (edge LR + divclf, thr 0.7)",0.962,E1
+56483837,D09,2026-09-23 05:27:10,"D09: E1 + model forks V2 thr 0.9 (honest +0.0048, FP down), fallback prune",0.962,E1
+56483840,P07,2026-09-23 05:27:13,"P07: E1 + divclf prune-only of weak safe-div forks @0.7 (honest +0.0032, FP 69->17)",0.954,E1
+56484803,IF,2026-09-23 06:09:08,"IF: E1 + ILP-flow relink (honest +0.0079, in-sample +0.0199)",0.946,E1
+56506284,T20,2026-09-24 00:02:40,"T20: D08 + third model leonixis v5 ep059 (det .2/.5/.3, edge 0.2)",0.962,D08
+56506344,T00,2026-09-24 00:03:22,T00: D08 + third model leonixis v5 ep059 detection only,0.963,D08
+56506390,S1,2026-09-24 00:04:03,S1: E1 + V2 add 0.85/prune 0.7 + linefit 0.7,0.963,E1
+56506432,F1,2026-09-24 00:04:43,F1: D08 + float coordinates (3 dp),0.953,D08
+56506477,SV,2026-09-24 00:05:23,"SV: D08 + centroid refinement (1z/4yx, 2 it, blend .5)",0.964,D08
+56535618,SVB,2026-09-25 00:37:57,"SVB: D08 + subvox before-linefit, alpha 1, cap 2um",0.963,D08
+56535632,SVA,2026-09-25 00:38:38,"SVA: D08 + subvox after, alpha 1, cap 2um",0.963,D08
+56535648,MT,2026-09-25 00:39:20,MT: D08 + tight motion (4.5/8/vel0/gap4),0.963,D08
+56535660,ML,2026-09-25 00:40:06,ML: D08 + loose motion (6.5/12/vel.5/gap6),0.961,D08
+56535677,D2,2026-09-25 00:40:48,D2: E1 + forks ranker divclf2 cnn-heavy @0.9,0.959,E1
+56563639,LB3,2026-09-26 00:03:08,LB3: SV + learned bonus 3.0,0.964,SV
+56563872,RG0,2026-09-26 00:07:07,RG0: SV + retention guard off,0.962,SV
+56563908,SW5,2026-09-26 00:07:49,SW5: SV + secondary det weight 0.5,0.954,SV
+56565850,LNK,2026-09-26 01:28:38,"LNK: SV + learned relink admissibility gate p>=0.1 (in-sample +0.016, honest +0.004)",0.965,SV
+56574017,FTPR,2026-09-26 08:13:00,"FTPR: SV with primary fine-tuned (recipe D + robust aug, 7 ep)",0.963,SV
+56592088,LKA,2026-09-27 00:02:40,LKA: LNK + k1 + forks add .85/prune .8 (in-sample +0.0025 vs LNK),0.961,LK1
+56592166,LK1,2026-09-27 00:03:23,"LK1: LNK + k1 (in-sample +0.0012, honest +0.0027 vs LNK)",0.961,LNK
+56592378,LT8,2026-09-27 00:06:15,"LT8: LNK + k1 + divclf full ensemble (10 models, TTA 8)",0.961,LK1
+56592435,FD6,2026-09-27 00:06:57,FD6: SV with primary FT recipe D epoch 6 (no robust aug),0.959,SV
+56594886,LKB,2026-09-27 02:01:23,"LKB: LNK+k1 tuned on 44b6 lenses (DC gap .2, minlen 6, gate .15, sdcap .0028, leaf 0, gap2 9)",0.963,LK1
+56622748,V12O,2026-09-28 00:02:40,V12O: LNK + OWN coord head (100 films; +0.015 vs V1284 on 8 held-out films),0.967,LNK
+56622825,LDC,2026-09-28 00:03:22,LDC: LNK + DC gap threshold 0.2,0.965,LNK
+56622898,LBL,2026-09-28 00:04:04,LBL: LNK + DC gap .2 + gate .15 + leaf 0 + gap2 9,0.965,LNK
+56623372,V12,2026-09-28 00:12:42,V12: LNK + public V1284 coord head (subvox on),0.969,LNK
+56623399,V12ON,2026-09-28 00:13:24,V12ON: LNK + OWN coord head (subvox off),0.967,LNK
+56655829,TAP,2026-09-29 00:02:40,TAP: V12 + offset 0 + forks add .85/prune .9 + max sister 13 (honest OOF +0.0048),0.967,V12
+56656315,TP2,2026-09-29 00:07:26,TP2: V12 + offset 0 + prune .9 + max sister 14 + subvox alpha .3 (honest ~+0.0038),0.968,V12
+56661551,FAS,2026-09-29 03:38:12,FAS: V12 + offset half + forks add .85 + max sister 13 (no prune change; honest +0.0047),0.968,V12
+56671234,FA,2026-09-29 09:54:17,"FA: V12 + divclf crop offset half (0.2,0.825,0.85) bug fix only (honest +0.0012, audit44 0, D8 +0.0001)",0.970,V12
+56680540,PR07,2026-09-29 15:35:13,PR07: V12 + divclf prune threshold 0.7 (add stays 0.8): keep more geometric forks; opposite of TAP/TP2/FAS fork-reduction misses,0.968,V12
